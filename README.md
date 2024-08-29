@@ -1,33 +1,13 @@
-To activate the virtual environment created during the setup process, follow these platform-specific instructions:
-
-### **Activating the Virtual Environment:**
-
-- **On macOS/Linux:**
-
-  ```bash
-  source venv/bin/activate
-  ```
-
-- **On Windows:**
-
-  ```bash
-  venv\Scripts\activate
-  ```
-
-Once the virtual environment is activated, your terminal prompt should change to indicate that you are now working within the virtual environment. You can then proceed with the installation of dependencies and running the application.
-
-### **Updated README Instructions:**
-
 # Similarity Score Analyzer
 
 Similarity Score Analyzer is a Python application that analyzes the similarity of webpage content to a given query. The application leverages modern web scraping techniques, natural language processing, and machine learning models to provide detailed similarity analysis and optimization suggestions.
 
 ## Features
 
-- **Web Scraping**: Extracts webpage content using the `crawlee` library.
+- **Web Scraping**: Extracts webpage content using the `requests` and `BeautifulSoup` libraries.
 - **Text Preprocessing**: Cleans and preprocesses text data for analysis.
 - **Embedding Generation**: Generates text embeddings using TensorFlow Hub models.
-- **Similarity Scoring**: Computes cosine similarity scores between query and webpage sections.
+- **Similarity Scoring**: Computes cosine similarity scores between the query and webpage sections.
 - **Google Cloud NLP Integration**: Analyzes sentiment and entity recognition using Google Cloud Natural Language API.
 - **Heatmap Visualization**: Displays similarity scores in a heatmap for easy visualization.
 - **Optimization Suggestions**: Provides suggestions to improve content relevance based on similarity scores.
@@ -38,8 +18,8 @@ To install and set up the Similarity Score Analyzer, follow these steps:
 
 ### Prerequisites
 
+- Anaconda or Miniconda installed
 - Python 3.8 or higher
-- pip (Python package installer)
 - A Google Cloud account with access to the Natural Language API
 
 ### Setup Instructions
@@ -51,23 +31,17 @@ To install and set up the Similarity Score Analyzer, follow these steps:
    cd similarity-score-analyzer
    ```
 
-2. **Create a Virtual Environment (Optional but Recommended):**
+2. **Create a Conda Environment:**
 
    ```bash
-   python3 -m venv venv
+   conda create -n similarity_analyzer_env python=3.9
    ```
 
-3. **Activate the Virtual Environment:**
+3. **Activate the Conda Environment:**
 
-   - On **macOS/Linux**:
-     ```bash
-     source venv/bin/activate
-     ```
-
-   - On **Windows**:
-     ```bash
-     venv\Scripts\activate
-     ```
+   ```bash
+   conda activate similarity_analyzer_env
+   ```
 
 4. **Install the Package and Dependencies:**
 
@@ -79,11 +53,15 @@ To install and set up the Similarity Score Analyzer, follow these steps:
 
 5. **Set Up Environment Variables:**
 
-   Create a `.env` file in the root directory of the project and add your Google Cloud NLP API key:
+   Create a `.env` file in the root directory of the project and add the following environment variables:
 
    ```bash
    echo "GOOGLE_CLOUD_NLP_API_KEY=your_actual_api_key_here" > .env
+   echo "GEMINI_API_KEY=your_actual_gemini_api_key_here" >> .env
+   echo "MODEL_NAME=gemini-1.5-flash-exp-0827" >> .env
    ```
+
+   Replace `your_actual_api_key_here` and `your_actual_gemini_api_key_here` with your actual API keys.
 
 6. **Run the Application:**
 
@@ -99,7 +77,7 @@ Once the application is running, you can use the web interface to:
 
 1. **Enter the Target URL**: Provide the URL of the webpage you want to analyze.
 2. **Enter the Query**: Input the query you want to optimize the webpage content for.
-3. **Select an Embedding Model**: Choose from available embedding models like Universal Sentence Encoder.
+3. **Select an Embedding Model**: Choose from available embedding models like Universal Sentence Encoder or Gemini models.
 4. **Analyze**: Click the "Analyze" button to start the analysis.
 5. **View Results**: The application will display the overall similarity score, section-wise heatmap, optimization suggestions, and Google Cloud NLP analysis (sentiment and entities).
 
@@ -122,3 +100,13 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Contact
 
 For any inquiries or feedback, please open an issue.
+
+## Activating the Conda Environment
+
+To activate the conda environment created during the setup process:
+
+```bash
+conda activate similarity_analyzer_env
+```
+
+Once the conda environment is activated, your terminal prompt should change to indicate that you are now working within the environment. You can then proceed with the installation of dependencies and running the application.
