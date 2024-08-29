@@ -18,7 +18,6 @@ Once the virtual environment is activated, your terminal prompt should change to
 
 ### **Updated README Instructions:**
 
-```markdown
 # Similarity Score Analyzer
 
 Similarity Score Analyzer is a Python application that analyzes the similarity of webpage content to a given query. The application leverages modern web scraping techniques, natural language processing, and machine learning models to provide detailed similarity analysis and optimization suggestions.
