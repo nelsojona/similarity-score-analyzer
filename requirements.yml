@@ -1,0 +1,22 @@
+
+name: similarity_analyzer_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - beautifulsoup4
+  - requests
+  - nltk
+  - scikit-learn
+  - pip
+  - pip:
+    - streamlit==1.38.0
+    - numpy==1.24.4
+    - tensorflow-hub==0.16.1
+    - plotly==5.23.0
+    - crawlee[playwright]==0.3.0
+    - python-dotenv>=0.21.0
+    - google-cloud-language==2.14.0
+    - typer==0.12.5
+    - playwright==1.46.0
