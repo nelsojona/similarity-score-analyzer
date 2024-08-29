@@ -40,7 +40,7 @@ def generate_optimization_suggestions(sections: list, scores: list, query: str) 
 
 async def analyze_webpage(url: str, query: str, model_name: str):
     """
-    Asynchronous function to perform all gRPC-related operations first.
+    Asynchronous function to perform all analysis operations.
 
     Args:
         url (str): The URL of the webpage to analyze.
@@ -56,7 +56,7 @@ async def analyze_webpage(url: str, query: str, model_name: str):
     webpage_data = scrape_webpage(url)
     if not webpage_data:
         return None, None, None, None
-    
+
     sections = webpage_data["sections"]
 
     # Preprocess the text sections and the query
@@ -97,6 +97,9 @@ def main():
     if st.button("Analyze"):
         if url and query:
             with st.spinner('Analyzing webpage...'):
+                if selected_model == "Gemini Text Embedding":
+                    st.info("Using Gemini API for embedding generation. This may take a moment...")
+                
                 sections, scores, sentiments, entities = asyncio.run(analyze_webpage(url, query, selected_model))
 
                 if sections is None:
