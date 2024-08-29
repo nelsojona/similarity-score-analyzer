@@ -12,7 +12,7 @@ from embedding_generator import generate_embeddings, load_model, EMBEDDING_MODEL
 from similarity_scorer import calculate_similarity
 from heatmap_generator import generate_heatmap
 from google_nlp import analyze_all_sections
-from config import CONFIG
+from similarity_analyzer.config import CONFIG
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

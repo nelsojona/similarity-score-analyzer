@@ -5,7 +5,7 @@ import logging
 import google.generativeai as genai
 from google.api_core import exceptions as google_exceptions
 from google.api_core import retry
-from config import CONFIG
+from similarity_analyzer.config import CONFIG
 import time
 
 logger = logging.getLogger(__name__)

@@ -19,8 +19,8 @@ class TestGoogleNLP(unittest.TestCase):
         mock_client.return_value.analyze_sentiment.return_value = mock_response
 
         result = analyze_sentiment("This is a test.")
-        self.assertEqual(result.score, 0.8)
-        self.assertEqual(result.magnitude, 0.9)
+        self.assertAlmostEqual(result.score, 0.8, places=7)
+        self.assertAlmostEqual(result.magnitude, 0.9, places=7)
 
     @patch('google.cloud.language_v1.LanguageServiceClient')
     def test_analyze_entities(self, mock_client):

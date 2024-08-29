@@ -1,6 +1,6 @@
 from google.cloud import language_v1
 from google.api_core import exceptions
-from config import CONFIG
+from similarity_analyzer.config import CONFIG
 import logging
 import time
 import asyncio
